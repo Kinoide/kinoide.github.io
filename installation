@@ -1,0 +1,37 @@
+# Installing Kinobot
+
+In the following:
+- `server`: Self hosted solution for Kinobot
+- `guild`: Your discord server
+
+## Installing the bot on your server 
+
+```yaml
+version: "3"
+services:
+  kinobot:
+    container_name: kinobot
+    image: ghcr.io/kinoide/kinobot:latest
+    ports:
+      - "8080:8080"
+    env_file:
+      - env.kinobot
+    restart: unless-stopped
+  mongo:
+    container_name: kinobot_mongodb
+    image: mongo
+    ports: 
+      - "27017:27017"
+    env_file:
+      - env.kinobot
+    volumes:
+      - mongo-kinobot-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-kinobot-data:
+```
+
+## Installing the bot on your guild
+
+TODO
