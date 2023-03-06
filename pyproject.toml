@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kinoide-github-io"
+version = "0.1.0"
+description = ""
+authors = ["uj <aulien.jbadji@gmail.com>"]
+readme = "README.md"
+packages = [{include = "kinoide"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs-material = "^9.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
